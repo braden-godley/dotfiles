@@ -1,0 +1,136 @@
+{
+    // Show command center in window
+    "window.commandCenter": 1,
+    // Enable smart git commits
+    "git.enableSmartCommit": true,
+    // Don't confirm git sync
+    "git.confirmSync": false,
+    // Show relative line numbers
+    "editor.lineNumbers": "relative",
+    // Set space as the leader key
+    "vim.leader": "<Space>",
+    // Use system clipboard for vim operations
+    "vim.useSystemClipboard": true,
+    // Configure which keys vim should handle
+    "vim.handleKeys": {
+        "<C-d>": true,      // Let vim handle Ctrl+D
+        "<C-s>": false,     // Let VSCode handle Ctrl+S (Save)
+        "<C-z>": false,     // Let VSCode handle Ctrl+Z (Undo)
+        "<C-p>": false,     // Let VSCode handle Ctrl+P (Quick Open)
+        "<C-f>": true      // Let vim handle Ctrl+F for cursor autocompletion
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            // K shows hover tooltip documentation
+            "before": ["K"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.showHover"
+                }
+            ]
+        },
+        {
+            // gr goes to references
+            "before": ["g", "r"],
+            "commands": [
+                {
+                    "command": "editor.action.goToReferences"
+                }
+            ]
+        },
+        {
+            // gd goes to definition
+            "before": ["g", "d"], 
+            "commands": [
+                {
+                    "command": "editor.action.revealDefinition"
+                }
+            ]
+        },
+        {
+            // gi goes to implementation
+            "before": ["g", "i"],
+            "commands": [
+                {
+                    "command": "editor.action.goToImplementation"
+                }
+            ]
+        },
+        {
+            // <leader>ff opens quick file finder
+            "before": ["<leader>", "f", "f"],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            // <leader>fw opens find in files
+            "before": ["<leader>", "f", "w"],
+            "commands": [
+                {
+                    "command": "workbench.action.findInFiles"
+                }
+            ]
+        },
+        {
+            // gR renames symbol
+            "before": ["g", "R"],
+            "commands": [
+                {
+                    "command": "editor.action.rename"
+                }
+            ]
+        },
+        {
+            // ga shows quick fixes/code actions
+            "before": ["g", "a"],
+            "commands": [
+                {
+                    "command": "editor.action.quickFix"
+                }
+            ]
+        },
+        {
+            // [d goes to previous diagnostic/error
+            "before": ["[", "d"],
+            "commands": [
+                {
+                    "command": "editor.action.marker.prev"
+                }
+            ]
+        },
+        {
+            // ]d goes to next diagnostic/error
+            "before": ["]", "d"],
+            "commands": [
+                {
+                    "command": "editor.action.marker.next"
+                }
+            ]
+        },
+        {
+            // Tab goes to next editor tab
+            "before": ["<Tab>"],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditor"
+                }
+            ]
+        },
+        {
+            // Shift+Tab goes to previous editor tab
+            "before": ["<S-Tab>"],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditor"
+                }
+            ]
+        },
+    ],
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    }
+}
